@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS m_user(
+	--id VARCHAR(50) PRIMARY KEY,
+	name VARCHAR(50),
+	title VARCHAR(50),
+	content VARCHAR(100)
+);

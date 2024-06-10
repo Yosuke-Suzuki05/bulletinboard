@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- MapperとXMLのマッピング -->
+<mapper namespace="com.example.demo.repository.UserMapper">
+
+	<!-- マッピング定義（ユーザー） -->
+	<resultMap type="com.example.demo.domain.user.model.MUser" id="user">
+	<result column="name" property="name"/>
+	<result column="title" property="title"/>
+	<result column="content" property="content"/>
+	<result column="department_id" property="departmentId"/>
+	<result column="role" property="role"/>
+	</resultMap>
+
+    <!-- 投稿1件登録 -->
+    <insert id="insertOne">
+        INSERT INTO m_user (
+            name,
+            title,
+            content
+        ) VALUES (
+            #{name},
+            #{title},
+            #{content}
+        )
+    </insert>
+    <!-- 投稿を複数件取得 -->
+    <select id="findMany" resultType="MUser">
+    	select
+    		*
+    	from
+    		m_user
+    </select>
+    
+    <!-- 投稿1件検索 -->
+    <select id="findOne" resultMap="user">
+    	select
+    		*
+    	from
+    		m_user
+    	where
+    		name = #{name}
+    </select>
+    <!-- 投稿1件更新 -->
+    <update id="updateOne">
+    	update
+    		m_user
+    	set
+    		title = #{title}
+     		,content = #{content}
+     	where
+    		name = #{name}
+    </update>
+    
+   <!-- 投稿1件削除 -->
+   <delete id="deleteOne">
+   	delete from
+   		m_user
+   	where
+   		name = #{name}
+   </delete>
+    
+</mapper>

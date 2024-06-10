@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+}
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1em;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+label {
+    margin-bottom: .2em; /* ラベルと入力フィールドの間の空白を減らす */
+    color: #333333;
+    display: block;
+}
+input[type="text"],
+textarea {
+    border: 1px solid #CCCCCC;
+    padding: .4em; /* 入力フィールド内のパディングを減らす */
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    padding: 0.6em; /* サブミットボタンのパディングを減らす */
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.content {
+    height: 150px; /* テキストエリアの高さを調整する */
+    margin-bottom: 1em; /* コンテンツ間のマージンを調整 */
+}
